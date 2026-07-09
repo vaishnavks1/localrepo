@@ -1,0 +1,3 @@
+## 2026-07-09 - Minimal HTML Optimization
+**Learning:** Even in minimal static projects, missing boilerplate like <!DOCTYPE html> and <meta charset> can cause performance regressions. Specifically, missing DOCTYPE triggers "Quirks Mode" (BackCompat), which uses less optimized legacy rendering paths. Missing charset causes "encoding sniffing" which can delay parsing.
+**Action:** Always ensure <!DOCTYPE html> is present to trigger Standards Mode (CSS1Compat) and specify character encoding early to optimize the browser's critical rendering path. Add a data-URI favicon to prevent wasteful 404 network requests.
