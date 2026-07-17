@@ -1,0 +1,5 @@
+# Bolt Journal - Critical Learnings Only
+
+## 2025-07-17 - Initial Static HTML Performance Insights
+**Learning:** For extremely minimal, static HTML web projects lacking any server-side logic, framework build pipelines, or standard package managers (no package.json, etc.), substantial performance wins can still be achieved at the browser parsing and request level. Adding a `<!DOCTYPE html>` triggers HTML5 Standards Mode in modern browsers, replacing inefficient Quirks Mode. Specifying `<meta charset="UTF-8">` very early (within the first 1024 bytes) prevents costly and slow character encoding auto-detection or document re-parsing. Including a data-URI favicon (`<link rel="icon" href="data:,">`) prevents an unnecessary and wasteful HTTP 404 network request.
+**Action:** When working on static HTML pages with no build pipeline, always implement proper Standards Mode triggers, explicit early encoding headers, and dummy/data-URI favicon links, while ensuring that all existing text nodes (even those previously outside valid tags) are carefully preserved within the new structure.
