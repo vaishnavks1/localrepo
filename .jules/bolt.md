@@ -1,0 +1,3 @@
+## 2025-07-27 - Standardizing HTML for Standards Mode and Efficient Loading
+**Learning:** Adding `<!DOCTYPE html>` ensures browsers render the page in Standards Mode (`document.compatMode === 'CSS1Compat'`), preventing layout issues and maximizing rendering engine speed. Inline data-URI favicons (`<link rel="icon" href="data:,">`) prevent costly 404 network requests, and early charset declaration avoids double-parsing/character sniffing.
+**Action:** Always structure minimal or legacy HTML files with valid standard wrapping tags (`<!DOCTYPE html>`, `<html>`, `<head>`, `<meta charset="UTF-8">`, `<body>`) and inline data-URI favicons, while carefully preserving all existing text nodes.
