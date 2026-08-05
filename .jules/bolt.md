@@ -1,0 +1,3 @@
+## 2025-08-05 - Static HTML optimization best practices
+**Learning:** For extremely minimal or legacy static HTML web pages, implementing standard structure declarations (like standards mode DOCTYPE, UTF-8 charset, and dummy data favicon) eliminates browser-level parser backtracking, character encoding sniffing delays, and redundant HTTP requests for missing assets like favicon.ico, and preserves 100% of the textual nodes.
+**Action:** Always add `<!DOCTYPE html>`, early `<meta charset="UTF-8">`, and `<link rel="icon" href="data:,">` to minimal static html projects to maximize standard rendering speed and minimize redundant network 404s.
